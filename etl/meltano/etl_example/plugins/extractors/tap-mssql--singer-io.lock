@@ -1,0 +1,16 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-mssql",
+  "namespace": "tap_mssql",
+  "variant": "singer-io",
+  "label": "Microsoft SQL Server",
+  "docs": "https://hub.meltano.com/extractors/tap-mssql--singer-io",
+  "repo": "https://github.com/singer-io/tap-mssql",
+  "description": "Microsoft SQL Server",
+  "logo_url": "https://hub.meltano.com/assets/logos/extractors/mssql.png",
+  "capabilities": [
+    "catalog",
+    "discover",
+    "state"
+  ]
+}
