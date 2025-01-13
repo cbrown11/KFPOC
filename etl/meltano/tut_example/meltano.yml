@@ -1,0 +1,31 @@
+version: 1
+default_environment: dev
+project_id: aa390545-95d8-41f8-b801-d45f7a842c77
+environments:
+- name: dev
+- name: staging
+- name: prod
+plugins:
+  extractors:
+  - name: tap-csv
+    variant: meltanolabs
+    pip_url: git+https://github.com/MeltanoLabs/tap-csv.git
+    config:
+      files:
+      - entity: raw_customers
+        path: data/customers.csv
+        keys: [id]
+  loaders:
+  - name: target-jsonl
+    variant: andyh1203
+    pip_url: target-jsonl
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: host.docker.internal
+      port: 5432
+      user: devuser
+      password: devpassword
+      database: devdb
+
