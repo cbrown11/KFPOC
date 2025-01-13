@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  etl-service:
+    image: simpleetl
+    environment:
+      - ASPNETCORE_ENVRIONMENT=Development
+    ports:
+      - "33030:80"
+    build:
+      context: .
+      dockerfile: Dockerfile
