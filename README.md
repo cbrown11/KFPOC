@@ -21,4 +21,5 @@ This proof of concept showcases Dagster but requires additional setup, including
   
 ## Meltano POC
 - https://meltano.com/
+- https://docs.meltano.com/getting-started/meltano-at-a-glance/
 - https://www.youtube.com/watch?v=kcR-HtUvB5c&ab_channel=harness
