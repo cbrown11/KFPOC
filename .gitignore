@@ -2,3 +2,4 @@
 [Bd]in/
 [Oo]bj/
 **/bin/**
+etl/meltano/tut_example/plugins/**
