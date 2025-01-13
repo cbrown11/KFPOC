@@ -23,7 +23,7 @@ plugins:
     variant: meltanolabs
     pip_url: meltanolabs-target-postgres
     config:
-      host: host.docker.internal
+      host: localhost
       port: 5432
       user: devuser
       password: devpassword
