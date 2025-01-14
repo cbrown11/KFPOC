@@ -9,6 +9,28 @@ This example demonstrates an ETL process using Hexagonal architecture (ports and
 ## 3 .POC of Dagster
 This proof of concept showcases Dagster but requires additional setup, including Rust and Visual Studio C++ installations.
 
+## Extractor Data
+
+We're going to extract our data from a dockerized Azure SQL Emulator database running on your laptop. To launch a local Azure SQL container, you just need to follow the video which can be done via VS code or Azure Data Studio. (though I'm sure you can via command)
+
+https://www.youtube.com/watch?v=3XgepwpBJP8
+
+Data Source=localhost; 
+Database=ResearchExample; 
+User ID=sa; 
+PWD=1ceCream",
+
+
+## Loader Data
+
+We're going to load our data into a dockerized PostgreSQL database running on your laptop. View the docker docs if you don't yet have docker installed. To launch a local PostgreSQL container, you just need to run in the folder postgreSql:
+
+```
+docker-compose up -d
+```
+
+
+
 # References
 ## SQL Server in Docker
 - https://www.youtube.com/watch?v=3XgepwpBJP8&ab_channel=MicrosoftAzure
