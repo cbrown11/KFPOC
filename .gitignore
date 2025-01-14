@@ -2,4 +2,5 @@
 [Bd]in/
 [Oo]bj/
 **/bin/**
-etl/meltano/tut_example/plugins/**
+etl/meltano/**/plugins/**
+etl/**/bin/**
