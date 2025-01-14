@@ -28,4 +28,16 @@ plugins:
       user: devuser
       password: devpassword
       database: devdb
+      add_record_metadata: true
 
+  utilities:
+  - name: dbt-postgres
+    variant: dbt-labs
+    pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.3.0
+    config:
+      dbname: devdb
+      host: localhost
+      port: 5432
+      user: devuser
+      password: devpassword
+      schema: analytics
