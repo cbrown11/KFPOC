@@ -17,3 +17,13 @@ To run the service, this will build and restore
 ````
 
 
+
+# Docker 
+
+https://code.visualstudio.com/docs/containers/quickstart-aspnet-core
+
+```
+docker run --rm -it -v ${pwd}:/researchApi/ -w /researchApi mcr.microsoft.com/dotnet/sdk:8.0 dotnet run
+
+
+```

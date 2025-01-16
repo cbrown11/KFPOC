@@ -9,3 +9,12 @@ User ID=sa;
 PWD=1ceCream",
 
 
+Docker
+
+In Vs Code under Database Projects
+
+- Right Click on Project Publish
+- Select 'Publish to new Azure Sql Database emulator'
+    1. use default port 1433
+    2. enter password 'Password2025'
+    3. 

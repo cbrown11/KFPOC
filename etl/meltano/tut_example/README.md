@@ -1,4 +1,6 @@
 
+# Setup 
+
 The following is worth a read and watch. It's important to note that Transform has been replaced with utilities (see Part 3 for details).
 
 https://docs.meltano.com/getting-started/meltano-at-a-glance
@@ -7,12 +9,12 @@ I also found that this was worth a watch describing the Singer.Io schema
 
 https://www.youtube.com/watch?v=kcR-HtUvB5c&ab_channel=harness
 
-# Installation 
+## Installation 
 
 Followed the following steps 
 - https://docs.meltano.com/getting-started/installation
 
-# Part 1 - Connect
+## Part 1 - Connect
 
 Followed the following steps but used a tap-csv Loader instead tap-github
 - https://docs.meltano.com/getting-started/part1
@@ -20,7 +22,7 @@ Followed the following steps but used a tap-csv Loader instead tap-github
 I added a customers.csv to data folder
 
 
-# Part 2 - Store Data
+## Part 2 - Store Data
 
 Followed the following steps
 - https://docs.meltano.com/getting-started/part2
@@ -54,7 +56,7 @@ The other difference is I called arget-postgres without variant, as seem the def
 meltano add loader target-postgres
 ```
 
-# Part 3 - Process data
+## Part 3 - Process data
 
 Followed the following steps but replaced tap_csv instead of tap-github
 - https://docs.meltano.com/getting-started/part3
@@ -106,5 +108,44 @@ packages-install-path: dbt_packages
 - logs
 models:
   my_meltano_project: null
+
+```
+
+# Run the transformation process
+
+```
+meltano lock --update --all
+meltano invoke dbt-postgres:run
+```
+
+
+# Docker
+
+https://docs.meltano.com/guide/containerization/
+https://medium.com/data-manypets/how-to-run-meltano-in-a-container-on-google-cloud-composer-860783d0575c
+
+```
+# Docker has been installed
+docker --version
+
+# Add Docker files to your project
+meltano add files files-docker
+
+# Build Docker image containing
+# Meltano, your project, and all of its plugins
+docker build --tag meltano-tut_example .
+```
+
+```
+# View Meltano version
+docker run meltano-tut_example --version
+
+# simple run
+docker run meltano-tut_example run tap-csv target-jsonl
+
+
+# mounted  to exfiltrate target-jsonl output
+docker run --mount type=bind,src=$(pwd)/output,dst=/project/output meltano-tut_example:dev run tap-csv target-jsonl
+
 
 ```

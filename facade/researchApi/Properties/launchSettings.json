@@ -1,4 +1,13 @@
 ﻿{
+  "publicdev": {
+    "commandName": "Project",
+    "launchBrowser": true,
+    "applicationUrl": "http://+:8080",
+    "environmentVariables": {
+      "ASPNETCORE_ENVIRONMENT": "Development"
+    }
+  },
+
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
