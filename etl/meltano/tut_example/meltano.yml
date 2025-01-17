@@ -30,6 +30,7 @@ plugins:
       database: devdb
       add_record_metadata: true
 
+
   utilities:
   - name: dbt-postgres
     variant: dbt-labs
@@ -40,4 +41,5 @@ plugins:
       port: 5432
       user: devuser
       password: devpassword
-      schema: analytics
+      schema: analytics#
+

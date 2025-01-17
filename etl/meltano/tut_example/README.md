@@ -14,6 +14,17 @@ https://www.youtube.com/watch?v=kcR-HtUvB5c&ab_channel=harness
 Followed the following steps 
 - https://docs.meltano.com/getting-started/installation
 
+
+require C++ tools for some package
+
+- https://www.youtube.com/watch?v=x6OBMfLTLhA
+- https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget
+
+
+```
+winget install Microsoft.VisualStudio.2022.BuildTools --force --override "--passive -wait --add Microsoft.VisualStudio.VCTools;includedRecommended"
+```
+
 ## Part 1 - Connect
 
 Followed the following steps but used a tap-csv Loader instead tap-github
@@ -111,7 +122,14 @@ models:
 
 ```
 
-# Run the transformation process
+To create the actual table, we run the dbt model via meltano invoke dbt-postgres:run. Note this relies on previously running meltano
+
+```
+meltano run --full-refresh tap-csv target-postgres
+```
+
+## Run the transformation process
+
 
 ```
 meltano lock --update --all
@@ -145,7 +163,16 @@ docker run meltano-tut_example run tap-csv target-jsonl
 
 
 # mounted  to exfiltrate target-jsonl output
-docker run --mount type=bind,src=$(pwd)/output,dst=/project/output meltano-tut_example:dev run tap-csv target-jsonl
+docker run --mount type=bind,src=$(pwd)/output,dst=/project/output meltano-tut_example run tap-csv target-jsonl
+
+
+# run the transformation process
+docker run meltano-tut_example invoke dbt-postgres:run
+
+
+# Debug by launching a shell on the container
+docker run meltano-tut_example invoke dbt-postgres:run 
+
 
 
 ```
