@@ -36,5 +36,12 @@ To run the ELT
 
 ```
 meltano install
+
+# Invoke
 meltano invoke dbt-postgres:run
+
+# or Run (this seems better as will do an uppdate on second run)
+meltano run tap-mssql target-postgres dbt-postgres:run
+
 ```
+
