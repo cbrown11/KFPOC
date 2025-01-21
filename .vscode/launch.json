@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/facade/researchApi/bin/Debug/net6.0/researchApi.dll",
+            "program": "${workspaceFolder}/facade/researchApi/bin/Debug/net8.0/researchApi.dll",
             "args": [],
             "cwd": "${workspaceFolder}/facade/researchApi",
             "stopAtEntry": false,

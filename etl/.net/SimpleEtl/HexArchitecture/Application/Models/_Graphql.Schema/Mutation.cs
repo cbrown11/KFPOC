@@ -22,6 +22,7 @@ namespace simpleEtl.Schema
                return $"Insert or Update {assets.Count()} assets"; 
             }
             catch(Exception ex){
+               Console.WriteLine(ex);
                return $"Failed to process Research: {ex.Message}.";
             }
          } 

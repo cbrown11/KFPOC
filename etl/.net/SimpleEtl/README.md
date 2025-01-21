@@ -19,3 +19,19 @@ To run the service, this will build and restore
 ````
 
 
+
+
+
+# Target Table SQL
+Will need to create 
+
+```
+CREATE TABLE public.Asset (
+	Id int GENERATED ALWAYS AS IDENTITY NOT NULL,
+	Name varchar NULL,
+	"Type" varchar NULL,
+	CONSTRAINT asset_pk PRIMARY KEY (id)
+);
+
+```
+

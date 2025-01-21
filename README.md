@@ -30,6 +30,14 @@ docker-compose up -d
 ```
 
 
+# Local issues
+
+For dotnet run and python it seems that Windows Security (Defender) was blocking the executable.
+
+Go to Windows Security -> Virus and Threat protection settings -> Exclusions and add your folder to the exclusion list. (for exampe I added my "c:\_git").
+
+Now have no issues running and dont get access denied
+
 
 # References
 

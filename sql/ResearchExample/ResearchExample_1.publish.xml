@@ -2,6 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <TargetDatabaseName>ResearchExample</TargetDatabaseName>
+    <TargetConnectionString>Data Source=localhost,1433;Initial Catalog=ResearchExample;User ID=sa;Password=******;Connect Timeout=30;Encrypt=False;Authentication=SqlPassword;Application Name="SQL Database Project";Command Timeout=30</TargetConnectionString>
     <AllowIncompatiblePlatform>True</AllowIncompatiblePlatform>
     <DropPermissionsNotInSource>True</DropPermissionsNotInSource>
     <DropObjectsNotInSource>True</DropObjectsNotInSource>

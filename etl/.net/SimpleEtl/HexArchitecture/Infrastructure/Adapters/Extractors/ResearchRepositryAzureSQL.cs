@@ -17,7 +17,7 @@ namespace simpleEtl.Infrastructure.Adapters.Extractors
 
         public async Task<IEnumerable<ResearchObject>> GetResearchObjectsAsync()
         {
-            var  query  = "SELECT * FROM [Assets] (NOLOCK)";
+            var  query  = "SELECT * FROM dbo.[Assets] (NOLOCK)";
             using (var connection = _context.CreateConnection())
             {
                 return await connection.QueryAsync<ResearchObject>(query);
